@@ -38,6 +38,8 @@ const App = (props) => {
    
 
   const onSearch = (id) => {
+
+    if (!(id > 0 && id <=826)) return window.alert("¡El Id debe ser un número entre 1 y 826!");
     setIsLoading(true);
     axios(`https://rickandmortyapi.com/api/character/${id}`)
       .then(({ data }) => {

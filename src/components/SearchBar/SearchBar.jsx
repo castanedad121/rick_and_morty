@@ -10,9 +10,11 @@ const SearchBar = (props) => {
   const [id, setId] = useState("");
   const handleChange = (e) => {
     setId(e.target.value);
+    
   };
   const { onSearch } = props;
   const randomId = Math.trunc(Math.random() * 826) + 1;
+  
   return (
     <div className={styles.container} >
       <button
@@ -23,9 +25,10 @@ const SearchBar = (props) => {
       </button>
 
       <input
-        type="search"
-        placeholder="Write ID"
+        type="number"
+        placeholder="Write ID"  
         onChange={handleChange}
+        min="1" max="826"
         value={id}
         className={styles.search}
       />

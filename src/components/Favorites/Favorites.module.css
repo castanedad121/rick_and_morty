@@ -2,9 +2,10 @@
     display: flex;
     justify-content: space-evenly;
     align-content: center;
-    padding-top: 20px;
+    padding-top: 30px;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
+    width: 80%;
 }
 .ContainerOptions{
     display: flex;
