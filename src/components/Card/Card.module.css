@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 323px;
+  border: solid 2px black;
+  border-radius: 20px;
+  background: rgb(18, 255, 0);
+  background: radial-gradient(
+    circle,
+    rgb(0, 200, 255) 0%,
+    rgb(227, 228, 219) 100%
+  );
+  box-shadow: 5px 5px 10px 1px #24f0ff;
+  font-size: small;
+  line-height: 1;
+  animation: 3s fadeIn;
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.container:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+.onCloseContainer {
+  display: flex;
+  position: absolute;
+  padding-left: 194px;
+  
+}
+.onCloseContainerFav {
+  display: none;
+}
+
+.onCloseButton {
+  color: red;
+  font-weight: 900;
+  font-size: 38px;
+  background-color: transparent;
+  border: none;
+  margin-top: 0px;
+  margin-left: 10px;
+  -webkit-text-stroke: 1px #24f0ff;
+}
+
+.onCloseButton:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.favContainer {
+  display: flex;
+  position: absolute;
+}
+
+.favButton {
+  font-size: 38px;
+  margin-top: 0px;
+  margin-left: 3px;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+}
+.favButton:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.imgCard {
+  width: 250px;
+  border-radius: 20px 20px 0 0;
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 0px;
+  align-items: center;
+}
+
+.name {
+  background-color: gold;
+  border: solid 1px black;
+  position: absolute;
+  width: 249px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  
+}
+.name h2 {
+  font-size: medium;
+}
+
+.propsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: black;
+  border: solid 2px black;
+  height: 35px;
+}
+
+.propsContainer h2 {
+  color: rgb(0, 238, 255);
+
+  font-size: medium;
+
+}
+
+.containerOrigin {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  font-size: x-small;
+  align-items: center;
+  width: 250px;
+  height: 40px;
+  margin-top: 283px;
+ }
+
+.ContainerOrigin h2 {
+  
+  color: rgb(219, 22, 22);
+    
+}

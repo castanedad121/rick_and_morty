@@ -1,0 +1,136 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    background-color: #0b363978;
+    border-radius: 40px;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+.BackgroundGalaxy {
+    width: 80%;
+    height: 83%;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 40px;
+
+
+
+}
+
+@media screen and (max-width: 576px) {
+    .Container {
+        display: flex;  
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 90%;
+        margin: 20px;
+        .BackgroundGalaxy {
+            padding: 0px;
+            margin: 0px;
+            position: absolute;
+            object-fit: cover;
+            width: 90%;
+            height: 63%;
+        }
+
+        .Span {
+            width: 100%;
+            font-size: 200px;
+        }
+
+            .Span:first-letter {
+                width: 60%;
+                letter-spacing: 6vmax;
+                font-size: 200px;
+                
+            }
+
+            .Span:before {
+                width: 100%;
+                background-position: right;
+                
+        }
+    }
+}
+
+
+
+.Span {
+
+    font-family: Ubuntu, sans-serif;
+    position: relative;
+    color: #fff;
+    font-weight: 900;
+    font-size: 20.4em;
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    width: fit-content;
+    height: max-content;
+
+
+}
+
+.Span:first-letter {
+    letter-spacing: 12vmax;
+}
+
+.Span:before {
+    content: '';
+    background-image: url('https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png');
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: myAnim 10s ease 0s infinite normal forwards;
+}
+
+@keyframes myAnim {
+
+    0%,
+    100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+    }
+
+    15% {
+        transform: translateX(-30px) rotate(-6deg);
+    }
+
+    30% {
+        transform: translateX(15px) rotate(6deg);
+    }
+
+    45% {
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+
+    60% {
+        transform: translateX(9px) rotate(2.4deg);
+    }
+
+    75% {
+        transform: translateX(-6px) rotate(-1.2deg);
+    }
+}
+
+
+.P {
+    font-family: Ubuntu, sans-serif;
+    text-align: center;
+    font-style: italic;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    line-height: 22px;
+    position: relative;
+}

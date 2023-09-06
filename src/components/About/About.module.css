@@ -1,0 +1,75 @@
+.Container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    background-color: #0b363978;
+    border-radius: 40px;
+    padding: 40px;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 100px;
+    
+}
+ @media screen and (max-width: 768px) {
+    .Container {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 50%;
+        margin: 20px;
+       
+    }
+    }
+
+.ImgContainer { 
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0px 0px 50px 0px #24f0ff;
+    width: 200px;
+}
+
+.Img {
+    object-fit: cover;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.Containertext{
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    color: #17d85e;
+    font-weight: bolder;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+.Containertext span{
+    color: rgb(13, 229, 92);
+    font-weight: bold;
+}
+.Containertext label{
+    color: aliceblue;
+    font-weight: 200;
+    text-shadow: #0b363978;
+}
+
+
+.ContainerLinks{
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;
+    padding-top: 30px;
+    flex-wrap: wrap;
+}
+
+.ContainerLinks a{
+    text-decoration: none;
+    font-size: xx-large;
+    color: white;
+}
+
+.ContainerLinks a:hover{
+    color: rgb(0, 0, 0);
+    scale: 1.2;
+}

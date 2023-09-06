@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+
+}
+
+.search {
+  border: none;
+  outline: none;
+  font-size: larger;
+  font-family: cursive;
+  padding: 1px;
+  width: 120px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.597);
+  color: #000000;
+  border-bottom: 2px solid #17e12b;
+  border-top: 2px solid #17e12b;
+  height: 50px;
+  text-shadow: rgb(255, 255, 250) 0.1em 0.1em 0.2em;
+  font-weight: bold;
+}
+
+.buttonRandom {
+  cursor: pointer;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+  border: none;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  padding-top: 8px;
+  color: #17e12b;
+  background-color: #040404;
+  border: 2px solid #17e12b;
+  width: 50px;
+  height: 50px;
+}
+
+.buttonRandom:hover {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.buttonRandom:active {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+.buttonAdd {
+  cursor: pointer;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+  border: none;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  padding-top: 8px;
+  color: #17e12b;
+  background-color: #040404;
+  border: 2px solid #17e12b;
+  width: 50px;
+  height: 50px;
+}
+
+.buttonAdd:hover {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.buttonAdd:active {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+
+}

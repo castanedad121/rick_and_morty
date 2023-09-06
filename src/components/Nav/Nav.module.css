@@ -1,0 +1,90 @@
+.DivNav {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  flex-wrap: wrap;
+  width: 98%;
+  height: 100%;
+  gap: 20px;
+  padding-top: 30px;
+
+}
+@media screen and (max-width: 750px) {
+  .DivNav {
+      display: grid;
+      
+  }
+  }
+
+.buttonLogout {
+  cursor: pointer;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  padding-top: 8px;
+  background-color: red;
+  color: white;
+  border: 2px solid #ffffff;
+  width: 50px;
+  height: 50px;
+  
+}
+
+.buttonLogout:hover {
+  color: #aaaaaa;
+  background-color: #323232;
+  border: 2px solid #aaaaaa;
+  scale: 0.9;
+}
+
+.buttonLogout:active {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+  border: 2px solid #17e12b;
+}
+
+.buttonLinkNav button {
+  cursor: pointer;
+  text-align: center;
+  font-size: medium;
+  margin-top: 5px;
+  border: none;
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #040404;
+  color: #17e12b;
+  border: 2px solid #17e12b;
+  width: 120px;
+  height: 40px;
+}
+
+.buttonLinkNav:hover button {
+  color: #ffffff;
+  background-color: #040404;
+  border: 2px solid #ffffff;
+}
+
+.buttonLinkNav:active button {
+  transform: scale(1.5);
+  transition: all 0.5s ease;
+  border: 2px solid #17e12b;
+}
+
+.buttonLinkNavActive button {
+  cursor: pointer;
+  text-align: center;
+  font-size: medium;
+  margin-top: 5px;
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #040404;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  width: 120px;
+  height: 40px; 
+  scale: 1.1;
+}
