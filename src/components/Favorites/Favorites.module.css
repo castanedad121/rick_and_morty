@@ -6,20 +6,26 @@
     flex-wrap: wrap;
     gap: 20px;
 }
-
+.ContainerOptions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
 .Options {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    width: 80%;
-    margin: 0px 50px 0px 50px;
-    padding: 0px 50px 0px 50px;
+    gap: 100px;
+    width: auto;
+    
 }
 
 @media screen and (max-width: 768px) {
     .Options {
         flex-direction: column;
-        width: 35%;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 }
 
