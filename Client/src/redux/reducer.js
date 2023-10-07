@@ -15,7 +15,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         myFavorites: payload,
-       allCharacters: state.allCharacters.filter((char) => char.id !== +payload),
+       allCharacters: payload
       };
     case "LOGOUT":
       return {

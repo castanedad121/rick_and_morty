@@ -26,52 +26,77 @@ const App = (props) => {
   const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); 
+  //const [isLoading, setIsLoading] = useState(false);
 
-  function login(userData) {
-   const { email, password } = userData;
-   const URL = 'http://localhost:3001/rickandmorty/login/';
-   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+  async function login(userData) {
+    try {
+      const { email, password } = userData;
+      const URL = "http://localhost:3001/rickandmorty/login/";
+      const { data } = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
       const { access } = data;
       setAccess(data);
-      access && navigate('/home');
-   });
-}
-   
-
-  const onSearch = (id) => {
-    if (!(id > 0 && id <=826)) return window.alert("¡El ID debe ser un número entre 1 y 826!");
-    setIsLoading(true);
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then(({ data }) => {
-        if (data.name) {
-          const ids = characters.map((e) => e.id);
-          if (!ids.includes(parseInt(id))) {
-            setCharacters((oldChars) => [...oldChars, data]);
-          } else {
-            window.alert("¡Este personaje ya existe!");
-          }
+      access && navigate("/home");
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
+  const onSearch = async (id) => {
+    try {
+      if (!(id > 0 && id <= 826))
+        return window.alert("¡El ID debe ser un número entre 1 y 826!");
+      const { data } = await axios(
+        `http://localhost:3001/rickandmorty/character/${id}`
+      );
+      if (data.name) {
+        const ids = characters.map((e) => e.id);
+        if (!ids.includes(id)) {
+          setCharacters((oldChars) => [...oldChars, data]);
         } else {
-          window.alert(`Existe un problema: ${data.error}`);
+          window.alert("¡Este personaje ya existe!");
         }
-      })
-      .catch((error) => {
-        if (error.response) {
-          window.alert(`Error: ${error.response.status}`);
-        } else {
-          window.alert(`Error: ${error.message}`);
-        }
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-    
+      } else {
+        window.alert(`Existe un problema: ${data.error}`);
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
   };
+
+  // const onSearchh = (id) => {
+  //   if (!(id > 0 && id <=826)) return window.alert("¡El ID debe ser un número entre 1 y 826!");
+  //   setIsLoading(true);
+  //   axios(`http://localhost:3001/rickandmorty/character/${id}`)
+  //     .then(({ data }) => {
+  //       if (data.name) {
+  //         const ids = characters.map((e) => e.id);
+  //         if (!ids.includes(parseInt(id))) {
+  //           setCharacters((oldChars) => [...oldChars, data]);
+  //         } else {
+  //           window.alert("¡Este personaje ya existe!");
+  //         }
+  //       } else {
+  //         window.alert(`Existe un problema: ${data.error}`);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       if (error.response) {
+  //         window.alert(`Error: ${error.response.status}`);
+  //       } else {
+  //         window.alert(`Error: ${error.message}`);
+  //       }
+  //     })
+  //     .finally(() => {
+  //       setIsLoading(false);
+  //     });
+
+  // };
 
   const onClose = (id) => {
     setCharacters(
       characters.filter((char) => {
-        return char.id !== Number(id);
+        return char.id !== id;
       })
     );
     // here remove the favorites
@@ -90,17 +115,16 @@ const App = (props) => {
       {pathname !== "/" && <Nav onSearch={onSearch} logOut={logOut} />}
       <Routes>
         <Route path={PATHROUTES.LOGIN} element={<Form login={login} />} />
-        <Route element={<ProtectedRoute Access= {access}/>}>
-        <Route
-          path={PATHROUTES.HOME}
-          element={<Cards characters={characters} onClose={onClose} />}
-        />
-        <Route path={PATHROUTES.ABOUT} element={<About />}  />
-        <Route path={PATHROUTES.DETAIL} element={<Detail />} />
-        <Route path={PATHROUTES.FAVORITES} element={<Favorites />} />
+        <Route element={<ProtectedRoute Access={access} />}>
+          <Route
+            path={PATHROUTES.HOME}
+            element={<Cards characters={characters} onClose={onClose} />}
+          />
+          <Route path={PATHROUTES.ABOUT} element={<About />} />
+          <Route path={PATHROUTES.DETAIL} element={<Detail />} />
+          <Route path={PATHROUTES.FAVORITES} element={<Favorites />} />
         </Route>
         <Route path="*" element={<Error />} />
-
       </Routes>
     </div>
   );
