@@ -35,8 +35,10 @@ const App = (props) => {
       const { data } = await axios(
         URL + `?email=${email}&password=${password}`
       );
+      console.log(data);
       const { access } = data;
-      setAccess(data);
+      setAccess(access);
+      console.log(access);
       access && navigate("/home");
     } catch (err) {
       console.error(err.message);

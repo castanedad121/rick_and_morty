@@ -18,7 +18,9 @@
 //! SERVER WHITH EXPRESS
 const express = require("express");
 const server = express();
+const { conn } = require('./DB_connection');
 const PORT = 3001;
+
 const router = require("./routes/index");
 
 server.use((req, res, next) => {
@@ -38,6 +40,9 @@ server.use((req, res, next) => {
 server.use(express.json());
 server.use('/rickandmorty', router);
 
-server.listen(PORT, () => {
-  console.log("Server raised in port: " + PORT);
+conn.sync({force: false}).then(() => {
+   server.listen(PORT, () => {
+     console.log("Server raised in port: " + PORT);
+   });
 });
+
